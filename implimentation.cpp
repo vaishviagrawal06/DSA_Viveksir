@@ -1,4 +1,4 @@
-//Queue implementation
+// Queue implementation
 #include <bits/stdc++.h>
 #define SIZE 100
 using namespace std;
@@ -6,13 +6,12 @@ class Queue
 {
 public:
     int data[SIZE];
-    int front; //front → index of first element
-    int rear;  //rear → index of last element
-
+    int front; // front → index of first element
+    int rear;  // rear → index of last element
 };
 Queue *p = NULL, s1;
-void init(Queue *&p, Queue &s1)//*&p means reference to pointer
-                               // &s1 means reference to object
+void init(Queue *&p, Queue &s1) //*&p means reference to pointer
+                                // &s1 means reference to object
 {
     p = &s1;
     p->front = -1;
@@ -22,7 +21,7 @@ int empty(Queue *&p) // to check queue empty hai ki nhii
 {
     if (p->front == -1)
         return 1;
-    else            
+    else
         return 0;
 }
 int full(Queue *&p) // check ki queue full hai ya nhii
@@ -34,13 +33,13 @@ int full(Queue *&p) // check ki queue full hai ya nhii
 }
 void enqueue(Queue *&p, int x)
 {
-    if (full(p) == 1)  // check ki queue is full or not
+    if (full(p) == 1) // check ki queue is full or not
     {
         cout << "Queue is full" << endl;
         ;
         return;
     }
-    else  // agar queue full nhi hai to
+    else // agar queue full nhi hai to
     {
         if (p->front == -1)
         {
@@ -51,16 +50,16 @@ void enqueue(Queue *&p, int x)
         return;
     }
 }
-int dequeue(Queue *&p)   // remove operation 
+int dequeue(Queue *&p) // remove operation
 {
-    if (empty(p))   // agar queue empty hai to
+    if (empty(p)) // agar queue empty hai to
     {
         cout << "Empty queue!";
         return -1;
     }
     else
     {
-        if (p->front == p->rear)  // agar queue me ek hi element bacha ho to
+        if (p->front == p->rear) // agar queue me ek hi element bacha ho to
         {
             int y;
             y = p->data[p->front];
@@ -69,7 +68,7 @@ int dequeue(Queue *&p)   // remove operation
         }
         else
         {
-            int y;  // agar ek se jayada element hai to
+            int y; // agar ek se jayada element hai to
             y = p->data[p->front];
             p->front++;
             return y;
@@ -90,8 +89,8 @@ int main()
     enqueue(p, 9);
     enqueue(p, 10);
     cout << "Queue:";
-    int count = p->rear - p->front + 1;  // calculate number of element in queue
-    for (int i = 0; i < count; i++) // jo jo element remove hote jaa rahe hai usko print karwana hai
+    int count = p->rear - p->front + 1; // calculate number of element in queue
+    for (int i = 0; i < count; i++)     // jo jo element remove hote jaa rahe hai usko print karwana hai
     {
         int k = dequeue(p);
         cout << k << " ";
