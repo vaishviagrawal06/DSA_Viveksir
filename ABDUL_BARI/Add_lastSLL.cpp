@@ -92,3 +92,16 @@ int main()
     getch();
     return 0;
 }
+
+
+// int main()
+// {
+// 	init();
+// 	createfirst(10);
+// 	addnode(20);
+// 	addnode(30);
+// 	addnode(50);
+// 	addnode(60);
+// 	display();
+
+// }
