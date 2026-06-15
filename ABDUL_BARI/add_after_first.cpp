@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+node *first, *temp, *ttemp, *pre, *curr, *nextt;
+
+void init()
+{
+    first = temp = ttemp = NULL;
+}
+void createfirst(int x)
+{
+    first = new node;
+    first->data = x;
+    first->next = NULL;
+}
+
+void addNode(int val)
+{
+    temp = first;
+
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    ttemp = new node;
+    ttemp->data = val;
+    ttemp->next = NULL;
+    temp->next = ttemp;
+}
+
+void display()
+{
+    temp = first;
+    while (temp != NULL)
+    {
+        cout << temp->data << endl;
+        temp = temp->next;
+    }
+}
+
+void add_after_first(int x)
+{
+    temp=first;
+    temp=temp->next;
+    ttemp=new node;
+    ttemp->data=x;
+    ttemp->next=temp;
+    first->next=ttemp;
+}
+int main()
+{
+    init();
+    createfirst(10);
+    addNode(20);
+    addNode(30);
+    cout<<"befor adding: "<<endl;
+    display();
+    add_after_first(25);
+    cout<<"after adding: "<<endl;
+    display();
+}
