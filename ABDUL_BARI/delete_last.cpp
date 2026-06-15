@@ -7,7 +7,7 @@ struct node
     struct node *next;
 };
 
-node *first, *temp, *ttemp, *pre, *curr, *nextt, *p;
+node *first, *temp, *ttemp;
 
 void init()
 {
@@ -63,9 +63,9 @@ int main()
     addNode(20);
     addNode(30);
     addNode(40);
-    cout << "before deleting: " << endl;
+    cout << "before deleting last node: " << endl;
     display();
     delete_last();
-    cout << "after deleting: " << endl;
+    cout << "after deleting last node: " << endl;
     display();
 }
