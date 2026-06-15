@@ -65,7 +65,6 @@ int main()
     addNode(30);
     cout<<"befor adding: "<<endl;
     display();
-    // add_beforegiven_data(20,45);
     add_aftergiven_data(20,60);
     cout<<"after adding: "<<endl;
     display();
