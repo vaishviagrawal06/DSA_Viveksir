@@ -47,15 +47,15 @@ void display()
 void add_beforegiven_data(int x,int y)
 {
     temp=first;
-    while(temp->next->data!=x)
+    while(temp->data!=x)
     {
-        ttemp=temp->next;
+        ttemp=temp;
         temp=temp->next;
     }
     p=new node;
     p->data=y;
-    p->next=ttemp;
-    temp->next=p;
+    p->next=temp;
+    ttemp->next=p;
 }
 int main()
 {
